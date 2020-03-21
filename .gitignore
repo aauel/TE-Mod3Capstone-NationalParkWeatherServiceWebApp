@@ -6,3 +6,4 @@
 **/.recommenders
 **/bin/
 **/Servers/
+src/main/resources/placeholder.txt
