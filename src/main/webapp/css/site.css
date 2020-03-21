@@ -1,0 +1,262 @@
+:root {
+  	font-size: 16px;
+}
+
+/* Resets */
+* {
+	box-sizing: border-box;
+	font-family: "Roboto", serif;
+}
+#copyright {
+	margin: 30px 15px;
+	font-size: 12px;
+}
+ul {
+	margin: 0;
+	padding: 0;
+}
+a {
+  	text-decoration: none;
+}
+
+header img {
+	width: 50vw;
+}
+
+ul {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 100%;
+}
+
+nav ul li {
+ 	 list-style: none;
+}
+li a, #five-day-forecast {
+  	width:250px;
+    margin: 5px auto;
+    display: block;
+    font-size: 18px;
+    padding:5px;
+    border-radius: 4px;
+    text-align:center;
+    text-decoration: none;
+    background-color: hsl(200, 100%, 40%);
+    color: white;
+    font-weight: bold;
+}
+li a:hover, #five-day-forecast:hover {
+	background-color: hsl(200, 60%, 40%);
+	text-decoration: none;
+	color: white;
+}
+
+.main-content, .survey-main-content{
+	margin: 10px;
+}
+
+.main-content h1, .survey-main-content h1{
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.all-park-info, .favoriteParks, .parkDetail-coreInfo{
+	margin: 10px;
+	width: 90%;
+	background-color: aliceblue;
+	border-radius: 25px;
+	padding: 10px;
+}
+
+#park-facts{
+	margin: 10px auto;
+	width: 300px;
+	background-color: linen;
+	border-radius: 25px;
+	padding: 20px 30px;
+}
+#park-facts ul li {
+	list-style: none;
+}
+#park-facts ul li span, .bold {
+	font-weight: bold;
+}
+
+.weather, .five-day-weather {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	margin: 10px auto;
+	width: 300px;
+	border-radius: 25px;
+	border: solid grey 1px;
+	padding: 10px;
+}
+
+#today-weather-image {
+	display: block;
+	width: 150px;
+}
+#daily-weather-image {
+	width: 150px;
+}
+#tempPreferenceForSession {
+	margin-top: 20px;	
+	padding-top: 10px;
+	border-top: solid lightgrey .5px;
+}
+
+.recommendations {
+	display: block;
+	border-top: solid grey 1px;
+	margin: 15px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+.park-image img, .fave-park-image img {
+	margin-bottom: 10px;
+	border-radius: 25px;
+	width: 85vw;
+	/*change the size of the images and round corners*/
+}
+
+.park-info h1, .park-rank-info h1{
+	font-size: 25px;
+	font-weight: bold;
+	/*Adjust size of titles and bold them*/
+}
+
+.park-info h1 a{
+	text-decoration: none;
+	/*remove underline from hover over park name*/
+}
+
+.park-info h2{
+	font-size: 18px;
+	font-weight: bold;
+	/*Adjust size of states*/
+}
+
+.quote{
+	padding: 30px;
+}
+
+#fancyQuote{
+	font-family: 'Calligraffitti', cursive;
+	font-size: 30px;
+}
+
+label {
+	font-weight: bold;
+}
+
+errors {
+	color: red;
+}
+
+/* New breakpoint at 900px */
+@media only screen and (min-width: 900px) {
+	
+	body {
+		max-width: 1000px;
+		margin: 5px auto;
+	}
+	.main-content {
+		width: 100%;
+	}
+	
+		
+	  /* make the nav links go to one line */
+	nav ul {
+	  flex-direction: row;
+	  justify-content: center;
+	}
+	li{
+		padding:5px;
+	}
+	
+	.parkDetail-coreInfo {
+		width: 850px;
+	}
+	
+	.all-park-info {
+		width: 0px auto;
+		display: grid;
+		grid-template-columns: 2em 1fr 2fr 2em; 
+		grid-template-rows: auto;
+		grid-template-areas:
+			". img info .";
+		padding: 10px 0px;
+	}
+	.park-image {
+		grid-area: img;
+	}
+	.park-image img{
+		border-radius: 25px;
+		width: 100%;
+		/*change the size of the images and round corners*/
+	}
+	.park-info {
+		grid-area: info;
+		padding-left: 10px;
+	}
+
+	.extras {
+		display: flex;
+		justify-content: center;
+	}
+	#park-facts{
+		margin: 10px auto;
+		width: 40%;
+		background-color: linen;
+		border-radius: 25px;
+		padding: 10px;
+		border: solid grey 1px;
+		/*separate individual park content*/
+	}
+	#park-facts li {
+		margin-bottom: 3px;
+	}
+	.weather {
+		width: 40%;
+	}
+	#today-weather-image {
+		width: 40%;
+	}
+	
+	
+	.weather-group {
+		display: flex;
+		margin: 20px;
+	}
+	
+	.five-day-weather {
+		font-size: 14px;
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+	#daily-weather-image img {
+		width: 50%;
+	}
+	
+	
+	.favoriteParks {
+		margin: 10px 30px;
+		width: 80%;
+	}
+	.fave-park-image img {
+		width: 100%;
+	}
+	
+	.survey-main-content {
+		margin: 10px auto;
+		width: 500px;
+	}
+	
+}
