@@ -22,9 +22,7 @@
 		<c:url var="homeLink" value="/" />
 		<c:url var="surveyLink" value="/survey" />
 		<c:url var="favoritesLink" value="/favoriteParks" />
-		<ul>
-			<li><a href="${homeLink}">Home</a></li>
-			<li><a href="${surveyLink}">Survey</a></li>
-			<li><a href="${favoritesLink}">Favorite Parks</a></li>
-		</ul>
+			<a class="button" href="${homeLink}">Home</a>
+			<a class="button" href="${surveyLink}">Survey</a>
+			<a class="button" href="${favoritesLink}">Favorite Parks</a>
 	</nav>

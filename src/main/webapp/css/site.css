@@ -1,41 +1,28 @@
 :root {
   	font-size: 16px;
 }
-
-/* Resets */
+body {
+	background: rgb(34,195,190);
+	background: linear-gradient(0deg, rgba(34,195,190,1) 0%, rgba(255,254,151,1) 100%);
+	}
+/****************** Resets *******************/
 * {
 	box-sizing: border-box;
 	font-family: "Roboto", serif;
-}
-#copyright {
-	margin: 30px 15px;
-	font-size: 12px;
 }
 ul {
 	margin: 0;
 	padding: 0;
 }
+ul li {
+ 	 list-style: none;
+}
 a {
   	text-decoration: none;
 }
 
-header img {
-	width: 50vw;
-}
 
-ul {
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	width: 100%;
-}
-
-nav ul li {
- 	 list-style: none;
-}
-li a, #five-day-forecast {
-  	width:250px;
+.button {
     margin: 5px auto;
     display: block;
     font-size: 18px;
@@ -47,11 +34,32 @@ li a, #five-day-forecast {
     color: white;
     font-weight: bold;
 }
-li a:hover, #five-day-forecast:hover {
+.button:hover {
 	background-color: hsl(200, 60%, 40%);
 	text-decoration: none;
 	color: white;
 }
+
+
+/****************** Header *******************/
+
+header {
+	text-align: center;
+}
+header img {
+	width: 225px;
+}
+
+
+/**************** Navigation *****************/
+
+nav {
+	width: 100%;
+}
+nav a {
+	width: 30%;
+}
+
 
 .main-content, .survey-main-content{
 	margin: 10px;
@@ -108,7 +116,9 @@ li a:hover, #five-day-forecast:hover {
 	padding-top: 10px;
 	border-top: solid lightgrey .5px;
 }
-
+#today-weather a {
+	width: 250px;
+}
 .recommendations {
 	display: block;
 	border-top: solid grey 1px;
@@ -160,22 +170,29 @@ errors {
 	color: red;
 }
 
-/* New breakpoint at 900px */
+
+
+/**************************** New breakpoint at 900px ******************************/
+
 @media only screen and (min-width: 900px) {
 	
 	body {
 		max-width: 1000px;
 		margin: 5px auto;
 	}
+	header img {
+		width: 500px;
+	}
 	.main-content {
 		width: 100%;
 	}
 	
 		
-	  /* make the nav links go to one line */
-	nav ul {
-	  flex-direction: row;
-	  justify-content: center;
+	  /* make the nav links go to one line and center */
+	nav {
+		width: 80%;
+		margin: 0px auto;
+		display: flex;
 	}
 	li{
 		padding:5px;
@@ -186,13 +203,11 @@ errors {
 	}
 	
 	.all-park-info {
-		width: 0px auto;
+		width: auto;
 		display: grid;
-		grid-template-columns: 2em 1fr 2fr 2em; 
-		grid-template-rows: auto;
-		grid-template-areas:
-			". img info .";
-		padding: 10px 0px;
+		grid-template-columns: 1fr 2fr; 
+		grid-template-areas: "img info";
+		padding: 10px;
 	}
 	.park-image {
 		grid-area: img;

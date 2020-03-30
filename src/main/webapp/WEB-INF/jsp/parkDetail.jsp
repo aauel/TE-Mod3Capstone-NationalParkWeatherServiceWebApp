@@ -84,12 +84,12 @@
 		</ul>
 	</div> <%-- park-facts --%>
 	
-	<div class="weather">
+	<div id="today-weather">
 	
 		<h4 class="bold">Today's Weather:</h4>
 		<img id="today-weather-image" src="${weatherImgUrl}" alt="forecast image for ${weatherForToday.forecast}" />
 		<span>High ${tempHigh}&deg${tempChar} | Low ${tempLow}&deg${tempChar}</span>
-		<a id="five-day-forecast" href="${weatherDetailLink}">Five Day Forecast</a>
+		<a class="button" href="${weatherDetailLink}">Five Day Forecast</a>
 			
 		<div id="tempPreferenceForSession">					
 			<form action="parkDetail" method="POST">
