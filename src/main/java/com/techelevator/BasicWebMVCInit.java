@@ -57,9 +57,14 @@ public class BasicWebMVCInit implements WebMvcConfigurer, WebApplicationInitiali
 	public BasicDataSource dataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
 		dataSource.setDriverClassName("org.postgresql.Driver");
-		dataSource.setUrl("jdbc:postgresql://localhost:5432/npgeek");
-		dataSource.setUsername(System.getenv("DB_USERNAME"));
-		dataSource.setPassword(System.getenv("DB_PASSWORD"));
+		String herokuDbUrl = System.getenv("JDBC_DATABASE_URL");
+		if (herokuDbUrl != null) {
+			dataSource.setUrl(herokuDbUrl);
+		} else {
+			dataSource.setUrl("jdbc:postgresql://localhost:5432/npgeek");
+			dataSource.setUsername(System.getenv("DB_USERNAME"));
+			dataSource.setPassword(System.getenv("DB_PASSWORD"));
+		}
 		return dataSource;
 	}
 	

@@ -65,8 +65,17 @@
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+					<version>3.1</version>
 				</configuration>
 			</plugin>
+			<plugin>
+			        <groupId>com.heroku.sdk</groupId>
+			        <artifactId>heroku-maven-plugin</artifactId>
+			        <version>2.0.16</version>
+			        <configuration>
+					 	 <appName>auel-te-national-parks</appName>
+					</configuration>
+		      </plugin>
 		</plugins>
 	</build>
 </project>
