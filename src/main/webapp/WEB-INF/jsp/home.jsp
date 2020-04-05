@@ -11,10 +11,13 @@
 
 <div class="main-content">
 
+	<h3>Select a park below for more details!</h3>
+	<div id="park-flexbox">
+
 	<c:forEach var="park" items="${parks}">
 		<%-- ${parks} passed from homePage() in homeController --%>
 		
-		<div class="all-park-info">
+		<div class="card moves home-park-div">
 		
 			<c:url value="/parkDetail" var="parkDetailLink">
 				<c:param name="code" value="${park.code}"/> 
@@ -22,16 +25,13 @@
 			<c:url value="/img/parks/${park.parkImageFilename}" var="parkImgUrl" />
 				<%-- park images are named by the 4 character park code --%>
 			
-			<div class="park-image">
-				<a href ="${parkDetailLink}"> <%-- image links to /parkDetail?code=____--%>
-				<img src="${parkImgUrl}" alt="park image" /></a>
-			</div>
+			<a class="detail-link" href ="${parkDetailLink}"></a> <%-- image links to /parkDetail?code=____--%>
+			<img class="park-img" src="${parkImgUrl}" alt="park image" />
 			
-			<div class="park-info">
-				<h1><a href ="${parkDetailLink}">${park.name}</a></h1>
+			<div class="park-text-div">
+				<h4 class="blue">${park.name}</h4>
 					<%-- park name links to /parkDetail?code=____--%>
-				<h2>${park.state}</h2>
-				<p>${park.description}</p>
+				<h5 class="state">${park.state}</h5>
 				
 			</div>
 			
@@ -39,6 +39,8 @@
 		
 	</c:forEach>
 	
-</div>
+	</div> <%-- park-flexbox --%>
+	
+</div> <%-- main-content --%>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />

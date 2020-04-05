@@ -3,7 +3,7 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<div class="survey-main-content">
+<div class="main-content">
 
 	<h1>Favorite Park Survey</h1>
 	<p>Fill out the details below to vote for your favorite park!</p>
