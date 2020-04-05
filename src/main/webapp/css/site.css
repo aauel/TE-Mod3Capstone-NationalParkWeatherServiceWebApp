@@ -1,11 +1,12 @@
 :root {
   	font-size: 16px;
+  	--button-blue: hsl(200, 100%, 40%);
+  	--hover-blue: hsl(200, 60%, 40%);
 }
-body {
-	background: rgb(34,195,190);
-	background: linear-gradient(0deg, rgba(34,195,190,1) 0%, rgba(255,254,151,1) 100%);
-	}
+
+	
 /****************** Resets *******************/
+
 * {
 	box-sizing: border-box;
 	font-family: "Roboto", serif;
@@ -22,6 +23,12 @@ a {
 }
 
 
+/****************** Multi-Page *******************/
+
+body {
+	background: rgb(34,195,190);
+	background: linear-gradient(0deg, rgba(34,195,190,1) 0%, rgba(255,254,151,1) 100%);
+}
 .button {
     margin: 5px auto;
     display: block;
@@ -30,12 +37,12 @@ a {
     border-radius: 4px;
     text-align:center;
     text-decoration: none;
-    background-color: hsl(200, 100%, 40%);
+    background-color: var(--button-blue);
     color: white;
     font-weight: bold;
 }
 .button:hover {
-	background-color: hsl(200, 60%, 40%);
+	background-color: var(--hover-blue);
 	text-decoration: none;
 	color: white;
 }
@@ -60,12 +67,11 @@ nav a {
 	width: 30%;
 }
 
-
-.main-content, .survey-main-content{
+.main-content {
 	margin: 10px;
 }
 
-.main-content h1, .survey-main-content h1{
+.main-content h1 {
 	font-size: 25px;
 	font-weight: bold;
 }
