@@ -1,9 +1,11 @@
 :root {
-  	font-size: 16px;
-  	--button-blue: hsl(200, 100%, 40%);
-  	--hover-blue: hsl(200, 60%, 40%);
+  	font-size: 14px;
+  	--b-blue: hsl(200, 100%, 40%);
+  	--b-blue-hover: hsl(200, 60%, 40%);
 }
-
+body {
+	background: linear-gradient(56deg, rgba(203,251,250,1) 0%, rgba(255,255,204,0.5) 100%);
+}
 	
 /****************** Resets *******************/
 
@@ -16,12 +18,17 @@ ul {
 	padding: 0;
 }
 ul li {
- 	 list-style: none;
+ 	list-style: none;
 }
 a {
-  	text-decoration: none;
+  text-decoration: none;
+}
+h1, h2, h3, h4, h5 {
+	font-weight: bold;
 }
 
+
+/************** Multiple Pages ***************/
 
 /****************** Multi-Page *******************/
 
@@ -30,21 +37,27 @@ body {
 	background: linear-gradient(0deg, rgba(34,195,190,1) 0%, rgba(255,254,151,1) 100%);
 }
 .button {
-    margin: 5px auto;
-    display: block;
-    font-size: 18px;
-    padding:5px;
-    border-radius: 4px;
-    text-align:center;
-    text-decoration: none;
-    background-color: var(--button-blue);
-    color: white;
-    font-weight: bold;
+  margin: 5px auto;
+  display: block;
+  font-size: 18px;
+  padding: 5px;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--b-blue);
+  color: white;
+  font-weight: bold;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    
 }
 .button:hover {
-	background-color: var(--hover-blue);
+	background-color: var(--b-blue-hover);
 	text-decoration: none;
 	color: white;
+	transform: scale(1.1);
+}
+.blue {
+	color: var(--b-blue-hover);
 }
 
 
@@ -54,7 +67,7 @@ header {
 	text-align: center;
 }
 header img {
-	width: 225px;
+	width: 300px;
 }
 
 
@@ -62,41 +75,93 @@ header img {
 
 nav {
 	width: 100%;
+	padding-bottom: 20px;
 }
 nav a {
-	width: 30%;
+	width: 50%;
 }
+
+
+/**************** Main Content *****************/
 
 .main-content {
 	margin: 10px;
+	text-align: center;
 }
 
-.main-content h1 {
-	font-size: 25px;
+.card {
+	text-align: left;
+	/* in order to make detail-link absolute to card div */
+	position: relative;
+	background-color: white;
+	width: 90%;
+	margin: 15px auto;
+	padding: 10px;
+	border-radius: 20px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+/* Makes the whole card a link to the details page */
+.detail-link {
+	position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10; 
+}
+.park-img, #detail-park-img {
+	border-radius: 20px;
+	width: 100%;
+}
+.park-text-div, .fav-park-text-div {
+	margin: 10px 10px;
+}
+.state {
 	font-weight: bold;
 }
 
-.all-park-info, .favoriteParks, .parkDetail-coreInfo{
-	margin: 10px;
-	width: 90%;
-	background-color: aliceblue;
-	border-radius: 25px;
+
+/**************** Park Details *****************/
+
+#quote-div{
 	padding: 10px;
 }
-
-#park-facts{
-	margin: 10px auto;
-	width: 300px;
-	background-color: linen;
-	border-radius: 25px;
-	padding: 20px 30px;
-}
-#park-facts ul li {
-	list-style: none;
-}
-#park-facts ul li span, .bold {
+#fancyQuote{
+	font-family: 'Calligraffitti', cursive;
+	font-size: 20px;
 	font-weight: bold;
 }
+.detail-park-info {
+	margin-top: 10px;
+}
+#park-facts{
+	width: 100%;
+	background-color: #e6e6e6;
+	border-radius: 20px;
+	padding: 20px 30px;
+	text-align: center;
+}
+#park-facts ul {
+	text-align: left;
+}
+#park-facts ul li span {
+	font-weight: bold;
+}
+#today-weather {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	text-align: center;
+	padding: 20px 30px;
+}
+#today-weather-image {
+	width: 150px;
+}
+
+
+/**************** Weather Details *****************/
 
 .weather, .five-day-weather {
 	display: flex;
@@ -105,14 +170,9 @@ nav a {
 	align-items: center;
 	margin: 10px auto;
 	width: 300px;
-	border-radius: 25px;
+	border-radius: 20px;
 	border: solid grey 1px;
 	padding: 10px;
-}
-
-#today-weather-image {
-	display: block;
-	width: 150px;
 }
 #daily-weather-image {
 	width: 150px;
@@ -122,65 +182,35 @@ nav a {
 	padding-top: 10px;
 	border-top: solid lightgrey .5px;
 }
-#today-weather a {
-	width: 250px;
-}
+
 .recommendations {
 	display: block;
 	border-top: solid grey 1px;
 	margin: 15px;
 }
 
-h5 {
-	font-size: 18px;
-}
 
-.park-image img, .fave-park-image img {
-	margin-bottom: 10px;
-	border-radius: 25px;
-	width: 85vw;
-	/*change the size of the images and round corners*/
-}
 
-.park-info h1, .park-rank-info h1{
-	font-size: 25px;
-	font-weight: bold;
-	/*Adjust size of titles and bold them*/
-}
-
-.park-info h1 a{
-	text-decoration: none;
-	/*remove underline from hover over park name*/
-}
-
-.park-info h2{
-	font-size: 18px;
-	font-weight: bold;
-	/*Adjust size of states*/
-}
-
-.quote{
-	padding: 30px;
-}
-
-#fancyQuote{
-	font-family: 'Calligraffitti', cursive;
-	font-size: 30px;
-}
+/**************** Survey Form *****************/
 
 label {
 	font-weight: bold;
 }
-
 errors {
 	color: red;
 }
 
 
 
-/**************************** New breakpoint at 900px ******************************/
+/**********************************************/
+/*            New breakpoint at 900px         */
+/**********************************************/
 
 @media only screen and (min-width: 900px) {
+	
+	:root {
+  	font-size: 12px;
+	}
 	
 	body {
 		max-width: 1000px;
@@ -190,60 +220,89 @@ errors {
 		width: 500px;
 	}
 	.main-content {
-		width: 100%;
+		width: 90%;
+		margin: 0px auto;
+		text-align: center;
 	}
 	
-		
-	  /* make the nav links go to one line and center */
+	/* make the nav links go to one line and center */
 	nav {
 		width: 80%;
-		margin: 0px auto;
+		margin: 10px auto;
 		display: flex;
 	}
-	li{
-		padding:5px;
+	nav a {
+		width: 30%;
 	}
-	
-	.parkDetail-coreInfo {
-		width: 850px;
+
+	/* Flexbox for home and favorites */
+	#park-flexbox {
+		display: flex;
+		flex-wrap: wrap;
 	}
-	
-	.all-park-info {
-		width: auto;
+
+	/* Home - 2 park tiles per row */
+	/* Home - park tile grid with image on left, text on right */
+	.home-park-div {
+		width: 47%;
+		margin: 5px auto;
 		display: grid;
 		grid-template-columns: 1fr 2fr; 
 		grid-template-areas: "img info";
-		padding: 10px;
+	}
+	/* Park card enlarges on hover */
+	.moves:hover {
+		transform: scale(1.1);
 	}
 	.park-image {
 		grid-area: img;
+		margin-right: 5px;
 	}
-	.park-image img{
-		border-radius: 25px;
-		width: 100%;
-		/*change the size of the images and round corners*/
-	}
-	.park-info {
+	.park-text-div {
 		grid-area: info;
-		padding-left: 10px;
 	}
+	
+	/* Favorites - 3 park tiles per row */
+	.fav-park-div {
+		width: 30%;
+	}
+	.fav-park-text-div {
+		text-align: center;
+		margin: 10px auto;
+	}
+	
+	
+	/********** Park Details **********/
+	
+	#fancyQuote{
+		font-size: 30px;
+		font-weight: bold;
+	}
+	.detail-park-img {
+		border-radius: 20px;
+		width: 50%;
+  	transition: 0.3s;
+		-webkit-filter: grayscale(100%);
+	  -moz-filter: grayscale(100%);
+	  -ms-filter: grayscale(100%);
+	  filter: grayscale(100%);
+	  filter: gray; /* IE 6-9 */
+	}
+	.detail-park-img:hover {
+		-webkit-filter: none;
+	  -moz-filter: none;
+	  -ms-filter: none;
+	  filter: none;
+	  transform: scale(2) translate(25%,0);
+	  object-fit: cover;
+	}
+	
 
 	.extras {
 		display: flex;
 		justify-content: center;
 	}
-	#park-facts{
-		margin: 10px auto;
-		width: 40%;
-		background-color: linen;
-		border-radius: 25px;
-		padding: 10px;
-		border: solid grey 1px;
-		/*separate individual park content*/
-	}
-	#park-facts li {
-		margin-bottom: 3px;
-	}
+
 	.weather {
 		width: 40%;
 	}
@@ -265,19 +324,12 @@ errors {
 	#daily-weather-image img {
 		width: 50%;
 	}
-	
-	
-	.favoriteParks {
-		margin: 10px 30px;
-		width: 80%;
-	}
-	.fave-park-image img {
-		width: 100%;
-	}
-	
-	.survey-main-content {
+
+
+	#surveyForm {
 		margin: 10px auto;
 		width: 500px;
+		text-align: left;
 	}
 	
 }
